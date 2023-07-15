@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="css/swiper-bundle.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <!-- Custom styles for this template -->
+  <link href="https://fonts.googleapis.com/css?family=Amiri:wght@400;700&amp;display=swap" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <!-- <link href="../blog/blog.rtl.css" rel="stylesheet"> -->
+  <style>
+    .choose {
+      position: relative;
+    }
+
+    .line-spacer {
+      width: 120px;
+      height: 2px;
+      background-color: #EAEAEA;
+      display: block !important;
+      position: absolute;
+      top: 12px;
+    }
+
+    .line-spacer-2 {
+      width: 120px;
+      height: 2px;
+      background-color: #EAEAEA;
+      display: block !important;
+      position: absolute;
+      top: 12px;
+      right: 0;
+    }
+    .img-hover:hover{
+      transform: scale(1.03);
+      transition: all 1s;
+    }
+  </style>
+</head>
+<body class="row col-md-12 col-sm-12 col-lg-10 d-block mx-auto" >
+
+    <!--Main Navigation-->
+    <header>
+      <!-- Jumbotron -->
+      <div class="p-3 text-center border-bottom">
+        <div class="container">
+          <div class="row">
+            <!-- Left elements -->
+            <div
+              class="col-md-2 col-sm-2 d-flex justify-content-center justify-content-md-start mb-3 mb-md-0"
+            >
+              <a href="#!" class="ms-md-2">
+                <img src="images/LOGO.jpg" height="35" />
+              </a>
+            </div>
+            <!-- Left elements -->
+            <!-- Center elements -->
+            <div class="col-md-8 col-sm-8">
+              <form class="d-flex input-group w-auto my-auto mb-3 mb-md-0">
+                <input
+                  autocomplete="off"
+                  type="search"
+                  class="form-control rounded"
+                  placeholder="Search"
+                />
+                <span class="input-group-text border-0 d-none d-lg-flex"
+                  ><i class="fas fa-search"></i
+                ></span>
+              </form>
+            </div>
+            <!-- Center elements -->
+
+            <!-- Right elements -->
+            <div
+              class="col-md-2 col-sm-2 d-flex justify-content-center justify-content-md-end align-items-center"
+            >
+              <div class="d-flex">
+                <!-- Cart -->
+                <a class="text-reset me-3" href="#">
+                  <span><i class="fas fa-shopping-cart"></i></span>
+                  <span class="badge rounded-pill badge-notification bg-danger"
+                    >1</span
+                  >
+                </a>
+
+                <!-- User -->
+
+                <div class="">
+                  <div
+                    class=""
+                    type="button"
+                    id=""
+                    data-bs-toggle=""
+                    aria-expanded="false"
+                  >
+                    <img
+                      src="images/nav/profile.png"
+                      class="rounded-circle"
+                      height="22"
+                      alt=""
+                      loading="lazy"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Right elements -->
+          </div>
+        </div>
+      </div>
+      <!-- Jumbotron -->
+
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-dark p-3 " id="headerNav" dir="rtl">
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-toggler-icon"><i class="fa-solid fa-bars"></i></a>
+          </button>
+  
+          <div class=" collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav mx-auto ">
+              <li class="nav-item">
+                <a class="nav-link mx-2 active" aria-current="page" href="index.html">الصفحة الرئيسية</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link mx-2" href="man-base.html">منتجاتنا</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link mx-2" href="man.html">أحذية رجالي </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link mx-2" href="kids.html">أحذية أطفال</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link mx-2" href="weman.html">أحذية ستاتي</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link mx-2" href="Us.html">من نحن</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link mx-2" href="#">اتصل بنا</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Navbar -->
+    </header>
+    <!--Main Navigation-->
+  <section class="categories  ">
+    <div class="wrapper">
+      <div class=" ">
+        <div class="d-md-flex justify-content-end hidden-mobile ">
+          <div class="d-flex justify-content-start"> الصفحة الرئيسية | أحذية رجالي </div>
+
+        </div>
+        <div class="hidden-mobile">
+          <div class="d-sm-flex align-items-sm-center pt-2 clear d-flex justify-content-between  ">
+            <div class=" form-inline d-flex align-items-center my-2 rounded bg-light border mx-lg-2 ">
+              <select class="form-select form-select-sm choices-single" aria-label=".form-select-sm example" dir="rtl">
+                <option selected>الترتيب حسب</option>
+                <option value="1">الأحدث أولا</option>
+                <option value="2">السعر الأقل أولا</option>
+                <option value="3">السعر الأعلى أولا</option>
+                <option value="3">الأكثر مبيعا</option>
+                <option value="3">متوفر بالمخازن</option>
+              </select>
+            </div>
+            <div class="d-flex">
+              <div class="green-label font-weight-bold p-0 px-1 mx-sm-1 mx-0 my-sm-0 my-2">حفايات رجالية <span
+                  class=" px-1 close">&times;</span> </div>
+              <div class="green-label font-weight-bold p-0 px-1 mx-sm-1 mx-0"> سبورت رجالي <span
+                  class=" px-1 close">&times;</span> </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="mobile-filter">
+        <div class="py-3">
+          <div class="title-sidebar d-flex justify-content-between">
+            <h5 class="font-weight-bold">
+              <p id="icon">
+                <i class="fa fa-minus" aria-hidden="true"></i>
+              </p>
+            </h5>
+            <h5 class="font-weight-bold ">الترتيب حسب</h5>
+          </div>
+          <form class="brand" id="toggle">
+            <div class="form-inline d-flex justify-content-between py-1">
+              <input type="checkbox">
+              <span class="check"></span>
+              <label class="tick d-flex justify-content-between"> الأحدث أولا
+              </label>
+            </div>
+            <div class="form-inline d-flex justify-content-between py-1">
+              <input type="checkbox" checked>
+              <span class="check"></span>
+              <label class="tick d-flex justify-content-between"> السعر الاقل اولا
+              </label>
+            </div>
+            <div class="form-inline d-flex justify-content-between py-1">
+              <input type="checkbox">
+              <span class="check"></span>
+              <label class="tick d-flex justify-content-between"> السعر الاعلى اولا
+              </label>
+            </div>
+            <div class="form-inline d-flex justify-content-between py-1">
+              <input type="checkbox">
+              <span class="check"></span>
+              <label class="tick d-flex justify-content-between"> الاكثر مبيعا
+              </label>
+            </div>
+            <div class="form-inline d-flex justify-content-between py-1">
+              <input type="checkbox">
+              <span class="check"></span>
+              <label class="tick d-flex justify-content-between"> متوفر بالمخازن
+              </label>
+            </div>
+          </form>
+        </div>
+        <div class="py-3">
+          <div class="title-sidebar d-flex justify-content-between">
+            <h5 class="font-weight-bold">
+              <p id="icon_two">
+                <i class="fa fa-minus" aria-hidden="true"></i>
+              </p>
+            </h5>
+            <h5 class="font-weight-bold ">التصنيفات</h5>
+          </div>
+          <form class="brand" id="toggle_Two">
+            <div class="form-inline d-flex justify-content-between py-1">
+              <input type="checkbox">
+              <span class="check"></span>
+              <label class="tick d-flex justify-content-between"> بوابيج رجالي
+              </label>
+            </div>
+            <div class="form-inline d-flex justify-content-between py-1">
+              <input type="checkbox" checked>
+              <span class="check"></span>
+              <label class="tick d-flex justify-content-between"> حفاية رجالي
+              </label>
+            </div>
+            <div class="form-inline d-flex justify-content-between py-1">
+              <input type="checkbox">
+              <span class="check"></span>
+              <label class="tick d-flex justify-content-between"> سبورت رجالي
+              </label>
+            </div>
+            <div class="form-inline d-flex justify-content-between py-1">
+              <input type="checkbox">
+              <span class="check"></span>
+              <label class="tick d-flex justify-content-between"> صنادل رجالية
+              </label>
+            </div>
+            <div class="form-inline d-flex justify-content-between py-1">
+              <input type="checkbox">
+              <span class="check"></span>
+              <label class="tick d-flex justify-content-between"> كندرة رجالي
+              </label>
+            </div>
+          </form>
+        </div>
+        <div class="py-3">
+          <div class="title-sidebar d-flex justify-content-between">
+            <h5 class="font-weight-bold">
+              <p id="icon_threee">
+                <i class="fa fa-minus" aria-hidden="true"></i>
+              </p>
+            </h5>
+            <h5 class="font-weight-bold ">الماركات</h5>
+          </div>
+          <form class="brand" id="toggle_Threee">
+
+            <div class="form-inline d-flex justify-content-between py-1">
+              <input type="checkbox">
+              <span class="check"></span>
+              <label class="tick d-flex justify-content-between"> الأحدث أولا
+
+              </label>
+            </div>
+
+            <div class="form-inline d-flex justify-content-between py-1">
+              <input type="checkbox" checked>
+              <span class="check"></span>
+              <label class="tick d-flex justify-content-between"> السعر الاقل اولا
+
+              </label>
+            </div>
+
+            <div class="form-inline d-flex justify-content-between py-1">
+              <input type="checkbox">
+              <span class="check"></span>
+              <label class="tick d-flex justify-content-between"> السعر الاعلى اولا
+
+              </label>
+            </div>
+
+            <div class="form-inline d-flex justify-content-between py-1">
+              <input type="checkbox">
+              <span class="check"></span>
+              <label class="tick d-flex justify-content-between"> الاكثر مبيعا
+
+              </label>
+            </div>
+
+            <div class="form-inline d-flex justify-content-between py-1">
+              <input type="checkbox">
+              <span class="check"></span>
+              <label class="tick d-flex justify-content-between"> متوفر بالمخازن
+
+              </label>
+            </div>
+
+
+          </form>
+        </div>
+
+      </div>
+    </div>
+    <div class="content py-md-0 py-3">
+      <section id="sidebar" >
+        <div class="py-3">
+          <div class="title-sidebar d-flex justify-content-between" >
+            <h5 class="font-weight-bold" >
+              <i class="fa fa-minus" aria-hidden="true"></i>
+            </h5>
+            <h5 class="font-weight-bold ">التصنيفات</h5>
+          </div>
+          <ul class="list-group">
+            <li class="list-group-item list-group-item-action d-flex justify-content-end align-items-center category">
+              بوابيج رجالي </li>
+            <li class="list-group-item list-group-item-action d-flex justify-content-end align-items-center category">
+              حفايات رجالية </li>
+            <li class="list-group-item list-group-item-action d-flex justify-content-end align-items-center category">
+              سبورت رجالي </li>
+            <li class="list-group-item list-group-item-action d-flex justify-content-end align-items-center category">
+              صنادل رجالية </li>
+            <li class="list-group-item list-group-item-action d-flex justify-content-end align-items-center category">
+              كندرة رجالي </li>
+
+          </ul>
+
+          <hr>
+          <div class="title-sidebar d-flex justify-content-between ">
+            <h5 class="font-weight-bold hidden-mobile">
+              <i class="fa fa-minus" aria-hidden="true"></i>
+
+            </h5>
+            <h5 class="font-weight-bold hidden-mobile">الماركات</h5>
+
+
+          </div>
+          <ul class="list-group">
+            <li class="list-group-item list-group-item-action d-flex justify-content-end align-items-center category">
+              <a href="">
+                nike
+            </li>
+            </a>
+
+            <li class="list-group-item list-group-item-action d-flex justify-content-end align-items-center category">
+              <a href="">
+                lacoste </a>
+            </li>
+
+            <li class="list-group-item list-group-item-action d-flex justify-content-end align-items-center category">
+              <a href="">
+                nike
+            </li>
+            </a>
+            <li class="list-group-item list-group-item-action d-flex justify-content-end align-items-center category">
+              <a href="">
+                lacoste </a>
+            </li>
+            <li class="list-group-item list-group-item-action d-flex justify-content-end align-items-center category">
+              <a href="">
+                nike
+            </li>
+            </a>
+
+
+          </ul>
+          <hr>
+          <div class="title-sidebar d-flex justify-content-between ">
+            <h5 class="font-weight-bold hidden-mobile">
+              <i class="fa fa-minus" aria-hidden="true"></i>
+
+            </h5>
+            <h5 class="font-weight-bold hidden-mobile">المقاس</h5>
+
+
+          </div>
+          <div>
+            <p class="d-flex justify-content-between align-items-center category mt-4">
+              <a href="shopping_cart.html"> <span class="py-2 px-3  border rounded-0">23</span></a>
+              <a href="shopping_cart.html"> <span class="py-2 px-3  border rounded-0">23</span></a>
+              <a href="shopping_cart.html"> <span class="py-2 px-3  border rounded-0">23</span></a>
+              <a href="shopping_cart.html"> <span class="py-2 px-3  border rounded-0">23</span></a>
+
+
+            </p>
+
+
+            <p class="d-flex justify-content-between align-items-center category mt-4">
+              <a href="shopping_cart.html"> <span class="py-2 px-3  border rounded-0">23</span></a>
+              <a href="shopping_cart.html"> <span class="py-2 px-3  border rounded-0">23</span></a>
+              <a href="shopping_cart.html"> <span class="py-2 px-3  border rounded-0">23</span></a>
+              <a href="shopping_cart.html"> <span class="py-2 px-3  border rounded-0">23</span></a>
+
+
+            </p>
+            <p class="d-flex justify-content-between align-items-center category mt-4">
+              <a href="shopping_cart.html"> <span class="py-2 px-3  border rounded-0">23</span></a>
+              <a href="shopping_cart.html"> <span class="py-2 px-3  border rounded-0">23</span></a>
+              <a href="shopping_cart.html"> <span class="py-2 px-3  border rounded-0">23</span></a>
+              <a href="shopping_cart.html"> <span class="py-2 px-3  border rounded-0">23</span></a>
+
+
+            </p>
+            <p class="d-flex justify-content-between align-items-center category mt-4">
+              <a href="shopping_cart.html"> <span class="py-2 px-3  border rounded-0">23</span></a>
+              <a href="shopping_cart.html"> <span class="py-2 px-3  border rounded-0">23</span></a>
+              <a href="shopping_cart.html"> <span class="py-2 px-3  border rounded-0">23</span></a>
+              <a href="shopping_cart.html"> <span class="py-2 px-3  border rounded-0">23</span></a>
+
+
+            </p>
+            <p class="d-flex justify-content-between align-items-center category mt-4">
+              <a href="shopping_cart.html"> <span class="py-2 px-3  border rounded-0">23</span></a>
+              <a href="shopping_cart.html"> <span class="py-2 px-3  border rounded-0">23</span></a>
+              <a href="shopping_cart.html"> <span class="py-2 px-3  border rounded-0">23</span></a>
+              <a href="shopping_cart.html"> <span class="py-2 px-3  border rounded-0">23</span></a>
+
+
+            </p>
+            <p class="d-flex justify-content-between align-items-center category mt-4">
+              <a href="shopping_cart.html"> <span class="py-2 px-3  border rounded-0">23</span></a>
+              <a href="shopping_cart.html"> <span class="py-2 px-3  border rounded-0">23</span></a>
+              <a href="shopping_cart.html"> <span class="py-2 px-3  border rounded-0">23</span></a>
+              <a href="shopping_cart.html"> <span class="py-2 px-3  border rounded-0">23</span></a>
+
+
+            </p>
+            <p class="d-flex justify-content-between align-items-start category mt-4">
+              <a href="shopping_cart.html"> <span class="py-2 px-3  border rounded-0">23</span></a>
+
+
+
+            </p>
+
+
+          </div>
+
+          <div class="py-3 ">
+            <div class="title-sidebar d-flex justify-content-between">
+              <h5 class="font-weight-bold">
+                <i class="fa fa-minus" aria-hidden="true"></i>
+
+              </h5>
+              <h5 class="font-weight-bold">الألوان</h5>
+
+            </div>
+            <p class="d-flex justify-content-between  category">
+
+              <a href=""><span class="py-2 px-4">عسلي</span></a>
+              <a href=""><span class="py-2 px-4  ">احمر</span></a>
+
+
+
+            </p>
+
+            <p class="d-flex justify-content-between  category">
+
+              <a href=""><span class="py-2 px-4">عسلي</span></a>
+              <a href=""><span class="py-2 px-4  ">احمر</span></a>
+
+
+
+            </p>
+
+            <p class="d-flex justify-content-between  category">
+
+              <a href=""><span class="py-2 px-4">عسلي</span></a>
+              <a href=""><span class="py-2 px-4  ">احمر</span></a>
+
+
+
+            </p>
+            <p class="d-flex justify-content-between  category">
+
+              <a href=""><span class="py-2 px-4">عسلي</span></a>
+              <a href=""><span class="py-2 px-4  ">احمر</span></a>
+
+
+
+            </p>
+
+
+
+            </ul>
+          </div>
+
+      </section>
+
+
+
+      <!-- Products Section -->
+      <section id="products" class="container ">
+        <div class="container py-3">
+          <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-12 offset-md-0 offset-sm-1">
+              <div class="card">
+                <img src="images/cart-pro-1.png" alt="" class="img-hover">
+                <div class="card-body">
+                  <h5 class="card-title" style="background-color: transparent">
+                    <i class="fa-regular fa-heart" style="font-size: 20px; padding: 5px;"></i>
+                  </h5>
+                  <div class="d-flex justify-content-between">
+                    <p class="card-text d-flex">
+                      <span class="dot"></span>
+                      <span class="dot-1"></span>
+                    </p>
+                    <p class="card-text">كندرة ستاتي</p>
+
+                  </div>
+
+                  <a href="shopping_cart.html" class="btn btn-primary pull-right w-100">140$</a>
+                </div>
+              </div>
+
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 offset-md-0 offset-sm-1">
+              <div class="card">
+                <img src="images/cart-pro-1.png" alt="" class="img-hover">
+                <div class="card-body">
+                  <h5 class="card-title" style="background-color: transparent">
+                    <i class="fa-regular fa-heart" style="font-size: 20px; padding: 5px;"></i>
+                  </h5>
+                  <div class="d-flex justify-content-between">
+                    <p class="card-text d-flex">
+                      <span class="dot"></span>
+                      <span class="dot-1"></span>
+                    </p>
+                    <p class="card-text">كندرة ستاتي</p>
+
+                  </div>
+
+                  <a href="shopping_cart.html" class="btn btn-primary pull-right w-100">140$</a>
+                </div>
+              </div>
+
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 offset-md-0 offset-sm-1">
+              <div class="card">
+                <img src="images/cart-pro-1.png" alt="" class="img-hover">
+                <div class="card-body">
+                  <h5 class="card-title" style="background-color: transparent">
+                    <i class="fa-regular fa-heart" style="font-size: 20px; padding: 5px;"></i>
+                  </h5>
+                  <div class="d-flex justify-content-between">
+                    <p class="card-text d-flex">
+                      <span class="dot"></span>
+                      <span class="dot-1"></span>
+                    </p>
+                    <p class="card-text">كندرة ستاتي</p>
+
+                  </div>
+
+                  <a href="shopping_cart.html" class="btn btn-primary pull-right w-100">140$</a>
+                </div>
+              </div>
+
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 offset-md-0 offset-sm-1">
+              <div class="card">
+                <img src="images/cart-pro-1.png" alt="" class="img-hover">
+                <div class="card-body">
+                  <h5 class="card-title" style="background-color: transparent">
+                    <i class="fa-regular fa-heart" style="font-size: 20px; padding: 5px;"></i>
+                  </h5>
+                  <div class="d-flex justify-content-between">
+                    <p class="card-text d-flex">
+                      <span class="dot"></span>
+                      <span class="dot-1"></span>
+                    </p>
+                    <p class="card-text">كندرة ستاتي</p>
+
+                  </div>
+
+                  <a href="shopping_cart.html" class="btn btn-primary pull-right w-100">140$</a>
+                </div>
+              </div>
+
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 offset-md-0 offset-sm-1">
+              <div class="card">
+                <img src="images/cart-pro-1.png" alt="" class="img-hover">
+                <div class="card-body">
+                  <h5 class="card-title" style="background-color: transparent">
+                    <i class="fa-regular fa-heart" style="font-size: 20px; padding: 5px;"></i>
+                  </h5>
+                  <div class="d-flex justify-content-between">
+                    <p class="card-text d-flex">
+                      <span class="dot"></span>
+                      <span class="dot-1"></span>
+                    </p>
+                    <p class="card-text">كندرة ستاتي</p>
+
+                  </div>
+
+                  <a href="shopping_cart.html" class="btn btn-primary pull-right w-100">140$</a>
+                </div>
+              </div>
+
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 offset-md-0 offset-sm-1">
+              <div class="card">
+                <img src="images/cart-pro-1.png" alt="" class="img-hover">
+                <div class="card-body">
+                  <h5 class="card-title" style="background-color: transparent">
+                    <i class="fa-regular fa-heart" style="font-size: 20px; padding: 5px;"></i>
+                  </h5>
+                  <div class="d-flex justify-content-between">
+                    <p class="card-text d-flex">
+                      <span class="dot"></span>
+                      <span class="dot-1"></span>
+                    </p>
+                    <p class="card-text">كندرة ستاتي</p>
+
+                  </div>
+
+                  <a href="shopping_cart.html" class="btn btn-primary pull-right w-100">140$</a>
+                </div>
+              </div>
+
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 offset-md-0 offset-sm-1">
+              <div class="card">
+                <img src="images/cart-pro-1.png" alt="" class="img-hover">
+                <div class="card-body">
+                  <h5 class="card-title" style="background-color: transparent">
+                    <i class="fa-regular fa-heart" style="font-size: 20px; padding: 5px;"></i>
+                  </h5>
+                  <div class="d-flex justify-content-between">
+                    <p class="card-text d-flex">
+                      <span class="dot"></span>
+                      <span class="dot-1"></span>
+                    </p>
+                    <p class="card-text">كندرة ستاتي</p>
+
+                  </div>
+
+                  <a href="shopping_cart.html" class="btn btn-primary pull-right w-100">140$</a>
+                </div>
+              </div>
+
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 offset-md-0 offset-sm-1">
+              <div class="card">
+                <img src="images/cart-pro-1.png" alt="" class="img-hover">
+                <div class="card-body">
+                  <h5 class="card-title" style="background-color: transparent">
+                    <i class="fa-regular fa-heart" style="font-size: 20px; padding: 5px;"></i>
+                  </h5>
+                  <div class="d-flex justify-content-between">
+                    <p class="card-text d-flex">
+                      <span class="dot"></span>
+                      <span class="dot-1"></span>
+                    </p>
+                    <p class="card-text">كندرة ستاتي</p>
+
+                  </div>
+
+                  <a href="shopping_cart.html" class="btn btn-primary pull-right w-100">140$</a>
+                </div>
+              </div>
+
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 offset-md-0 offset-sm-1">
+              <div class="card">
+                <img src="images/cart-pro-1.png" alt="" class="img-hover">
+                <div class="card-body">
+                  <h5 class="card-title" style="background-color: transparent">
+                    <i class="fa-regular fa-heart" style="font-size: 20px; padding: 5px;"></i>
+                  </h5>
+                  <div class="d-flex justify-content-between">
+                    <p class="card-text d-flex">
+                      <span class="dot"></span>
+                      <span class="dot-1"></span>
+                    </p>
+                    <p class="card-text">كندرة ستاتي</p>
+
+                  </div>
+
+                  <a href="shopping_cart.html" class="btn btn-primary pull-right w-100">140$</a>
+                </div>
+              </div>
+
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 offset-md-0 offset-sm-1">
+              <div class="card">
+                <img src="images/cart-pro-1.png" alt="" class="img-hover">
+                <div class="card-body">
+                  <h5 class="card-title" style="background-color: transparent">
+                    <i class="fa-regular fa-heart" style="font-size: 20px; padding: 5px;"></i>
+                  </h5>
+                  <div class="d-flex justify-content-between">
+                    <p class="card-text d-flex">
+                      <span class="dot"></span>
+                      <span class="dot-1"></span>
+                    </p>
+                    <p class="card-text">كندرة ستاتي</p>
+
+                  </div>
+
+                  <a href="shopping_cart.html" class="btn btn-primary pull-right w-100">140$</a>
+                </div>
+              </div>
+
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 offset-md-0 offset-sm-1">
+              <div class="card">
+                <img src="images/cart-pro-1.png" alt="" class="img-hover">
+                <div class="card-body">
+                  <h5 class="card-title" style="background-color: transparent">
+                    <i class="fa-regular fa-heart" style="font-size: 20px; padding: 5px;"></i>
+                  </h5>
+                  <div class="d-flex justify-content-between">
+                    <p class="card-text d-flex">
+                      <span class="dot"></span>
+                      <span class="dot-1"></span>
+                    </p>
+                    <p class="card-text">كندرة ستاتي</p>
+
+                  </div>
+
+                  <a href="shopping_cart.html" class="btn btn-primary pull-right w-100">140$</a>
+                </div>
+              </div>
+
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 offset-md-0 offset-sm-1">
+              <div class="card">
+                <img src="images/cart-pro-1.png" alt="" class="img-hover">
+                <div class="card-body">
+                  <h5 class="card-title" style="background-color: transparent">
+                    <i class="fa-regular fa-heart" style="font-size: 20px; padding: 5px;"></i>
+                  </h5>
+                  <div class="d-flex justify-content-between">
+                    <p class="card-text d-flex">
+                      <span class="dot"></span>
+                      <span class="dot-1"></span>
+                    </p>
+                    <p class="card-text">كندرة ستاتي</p>
+
+                  </div>
+
+                  <a href="shopping_cart.html" class="btn btn-primary pull-right w-100">140$</a>
+                </div>
+              </div>
+
+            </div>
+
+
+
+          </div>
+        </div>
+      </section>
+
+
+
+    </div>
+
+
+
+  </section>
+
+
+
+
+
+
+  <nav aria-label="Page navigation example " dir="rtl">
+    <ul class="pagination justify-content-center ">
+      <li class="page-item">
+        <a class="page-link" href="#"> <i class="fa-solid fa-arrow-right"></i> السابق </a>
+      </li>
+      <li class="page-item active"><a class="page-link" href="#">1</a></li>
+      <li class="page-item"><a class="page-link" href="#">2</a></li>
+      <li class="page-item"><a class="page-link" href="#">3</a></li>
+      <li class="page-item"><a class="page-link" href="#">...</a></li>
+      <li class="page-item"><a class="page-link" href="#">8</a></li>
+      <li class="page-item"><a class="page-link" href="#">9</a></li>
+      <li class="page-item"><a class="page-link" href="#">10</a></li>
+      <li class="page-item ">
+        <a class="page-link" href="#" tabindex="-1" aria-disabled="true"> التالي <i class="fa-solid fa-arrow-left"></i>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+
+
+
+
+
+
+
+
+
+  <section class="  parent-footer ">
+    <div class="row footer ">
+      <div class="col-md-12 col-xs-4 ">
+        <div class="text-center">
+          <img src="images/LOGO.jpg" style="width: 185px;" alt="logo">
+        </div>
+      </div>
+
+      <div class="col-md-12 col-sm-12 "  >
+        <div class="d-flex justify-content-center mt-3">
+          <p class="mx-2"><a href="my orders.html">طلباتي </a></p>
+          <p class="mx-2"><a href="personal_info.html">حسابي </a></p>
+          <p class="mx-2"><a href="terms _of_ service.html">الاحكام والشروط </a></p>
+          <p class="mx-2"><a href="privacy_policy.html">الخصوصية </a></p>
+          <p class="mx-2"><a href="shipping_address.html">الشحن والتوصيل </a></p>
+          <p class="mx-2"><a href="Us.html">من نحن</a></p>
+  
+        </div>
+      </div>
+        <!-- Grid container -->
+        <div class="container p-4 pb-0 text-center">
+          <!-- Section: Social media -->
+          <section class="mb-4">
+            <!-- Facebook -->
+            <a
+              class="btn text-white btn-floating m-1"
+              style="background-color: #3b5998;"
+              href="#!"
+              role="button"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+      
+            <!-- Twitter -->
+            <a
+              class="btn text-white btn-floating m-1"
+              style="background-color: #55acee;"
+              href="#!"
+              role="button"
+              ><i class="fab fa-twitter"></i
+            ></a>
+      
+      
+            <!-- Instagram -->
+            <a
+              class="btn text-white btn-floating m-1"
+              style="background-color: #ac2bac;"
+              href="#!"
+              role="button"
+              ><i class="fab fa-instagram"></i
+            ></a>
+      
+           
+      
+            <!-- tiktok -->
+            <a
+              class="btn text-white btn-floating m-1"
+              style="background-color: #000;"
+              href="#!"
+              role="button"
+              ><i class="fa-brands fa-tiktok"></i></a>
+      
+           
+      
+            <!-- whatsapp -->
+            <a
+              class="btn text-white btn-floating m-1"
+              style="background-color: #00A884;"
+              href="#!"
+              role="button"
+              > <i class="fab fa-whatsapp"></i>
+           </a>
+      
+           
+           
+          </section>
+          <!-- Section: Social media -->
+        <!-- Grid container -->
+      
+       
+  
+  
+        <div class="container  ">
+      <div class="row">
+          <div class="col-md-6 col-sm-12 mb-2 mobile-footer ">
+            <form class="d-flex mobile-footer ">
+              <button type="submit" class="btn join mx-2">اشترك</button>
+              <input type="text" name="" id="" placeholder="البريد الالكتروني" class="footer-input">
+            </form>
+    
+          </div>
+  
+          <div class="col-md-6 ">
+            <p class="text-right-rights mobile-footer ">© جميع الحقوق محفوظة 2022</p>
+    
+          </div>
+        </div>
+      </div>
+    
+    </div>
+
+
+  </section>
+
+
+
+  <!-- Swiper JS -->
+  <script src="js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+
+
+  <!-- JavaScript -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js"
+    integrity="sha512-6PM0qYu5KExuNcKt5bURAoT6KCThUmHRewN3zUFNaoI6Di7XJPTMoT6K0nsagZKk2OB4L7E3q1uQKHNHd4stIQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      window.addEventListener('scroll', function () {
+        if (window.scrollY > 50) {
+          document.getElementById('navbar_top').classList.add('fixed-top', 'col-lg-7', 'mx-auto', 'bg-light');
+          // add padding top to show content behind navbar
+          navbar_height = document.querySelector('.navbar').offsetHeight;
+          document.body.style.paddingTop = navbar_height + 'px';
+        } else {
+          document.getElementById('navbar_top').classList.remove('fixed-top', 'col-lg-7', 'mx-auto', 'bg-light');
+          // remove padding top from body
+          document.body.style.paddingTop = '0';
+        }
+      });
+    });
+  </script>
+  <script>
+    $("#icon").click(function () {
+      $("#toggle").toggle();
+    });
+    $("#icon_two").click(function () {
+      $("#toggle_Two").toggle();
+    });
+
+    $("#icon_threee").click(function () {
+      $("#toggle_Threee").toggle();
+    });
+  </script>
+
+</body>
+
+</html>

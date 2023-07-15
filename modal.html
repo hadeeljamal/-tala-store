@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="css/swiper-bundle.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <!-- Custom styles for this template -->
+  <link href="https://fonts.googleapis.com/css?family=Amiri:wght@400;700&amp;display=swap" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <!-- <link href="../blog/blog.rtl.css" rel="stylesheet"> -->
+  <style>
+    .choose {
+      position: relative;
+    }
+
+    .line-spacer {
+      width: 120px;
+      height: 2px;
+      background-color: #EAEAEA;
+      display: block !important;
+      position: absolute;
+      top: 12px;
+    }
+
+    .line-spacer-2 {
+      width: 120px;
+      height: 2px;
+      background-color: #EAEAEA;
+      display: block !important;
+      position: absolute;
+      top: 12px;
+      right: 0;
+    }
+
+    .floating-chat.enter {
+      transform: translateY(80px);
+      opacity: 0.6;
+      box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 2px rgba(0, 0, 0, 0.14);
+    }
+
+
+
+
+    /**
+ * Material Modal CSS
+ */
+    .modal {
+      will-change: visibility, opacity;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      overflow-y: auto;
+      overflow-x: hidden;
+      z-index: 1000;
+      visibility: hidden;
+      opacity: 0;
+      transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .modal--active {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .modal--align-top {
+      align-items: flex-start;
+    }
+
+    .modal__bg {
+      background: transparent;
+    }
+
+    .modal__dialog {
+      max-width: 1200px;
+      padding: 1.2rem;
+      height: 200px;
+    }
+
+    .modal__content {
+      will-change: transform, opacity;
+      position: relative;
+      padding: 2.4rem;
+      background: #ffebee;
+      background-clip: padding-box;
+      box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.25);
+      opacity: 0;
+      transition: all 0.25s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .modal__content--active {
+      opacity: 1;
+    }
+
+    .modal__close {
+      z-index: 1100;
+      cursor: pointer;
+    }
+
+    .modal__trigger {
+      position: relative;
+      display: inline-block;
+      color: rgba(0, 0, 0, 0.7);
+      line-height: 1;
+      cursor: pointer;
+    
+      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+      user-select: none;
+      transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .modal__trigger--active {
+      z-index: 10;
+    }
+
+    .modal__trigger:hover {
+      background: #e5d3d6;
+    }
+
+    #modal__temp {
+      will-change: transform, opacity;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: #ffebee;
+      transform: none;
+      opacity: 1;
+      transition: opacity 0.1s ease-out, transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    /**
+ * Demo specific CSS
+ */
+    body {
+      height: 100vh;
+      background: #f44336;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    .demo-btns header {
+      padding: 7vh 10vw;
+      background: #ffebee;
+      display: flex;
+      align-items: center;
+    }
+
+    .demo-btns header h1 {
+      margin: 0;
+      color: rgba(0, 0, 0, 0.54);
+      font-weight: 300;
+    }
+
+    .demo-btns .info {
+      background: #f44336;
+      padding: 3vh 10vw;
+      height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-flow: column wrap;
+    }
+
+    .demo-btns p {
+      text-align: center;
+      color: #fff;
+    }
+
+    .demo-btns .link {
+      font-size: 20px;
+    }
+
+    .demo-btns .modal__trigger {
+      margin-right: 3px;
+    }
+
+    @media (max-width: 640px) {
+      .demo-btns .modal__trigger {
+        margin-bottom: 0.8rem;
+      }
+    }
+
+    .demo-close {
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin: 1.2rem;
+      padding: 0.6rem;
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 50%;
+      transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .demo-close svg {
+      width: 24px;
+      fill: #fff;
+      pointer-events: none;
+      vertical-align: top;
+    }
+
+    .demo-close:hover {
+      background: rgba(0, 0, 0, 0.6);
+    }
+
+    .logo {
+      position: fixed;
+      bottom: 3vh;
+      right: 3vw;
+      z-index: 2;
+    }
+
+    .logo img {
+      width: 45px;
+      transform: rotate(0);
+      transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .logo img:hover {
+      transform: rotate(180deg) scale(1.1);
+    }
+  </style>
+</head>
+
+<body class="row col-md-12 col-sm-12 col-lg-10 d-block mx-auto">
+  <!--Main Navigation-->
+  <header>
+    <!-- Jumbotron -->
+    <div class="p-3 text-center border-bottom">
+      <div class="container">
+        <div class="row">
+          <!-- Left elements -->
+          <div class="col-md-2 col-sm-2 d-flex justify-content-center justify-content-md-start mb-3 mb-md-0">
+            <a href="#!" class="ms-md-2">
+              <img src="images/LOGO.jpg" height="35" />
+            </a>
+          </div>
+          <!-- Left elements -->
+          <!-- Center elements -->
+          <div class="col-md-8 col-sm-8">
+            <form class="d-flex input-group w-auto my-auto mb-3 mb-md-0">
+              <input autocomplete="off" type="search" class="form-control rounded" placeholder="Search" />
+              <span class="input-group-text border-0 d-none d-lg-flex"><i class="fas fa-search"></i></span>
+            </form>
+          </div>
+          <!-- Center elements -->
+
+          <!-- Right elements -->
+          <div class="col-md-2 col-sm-2 d-flex justify-content-center justify-content-md-end align-items-center">
+            <div class="d-flex">
+              <!-- Cart -->
+              <a class="text-reset me-3" href="#">
+                <span><i class="fas fa-shopping-cart"></i></span>
+                <span class="badge rounded-pill badge-notification bg-danger">1</span>
+              </a>
+
+              <!-- User -->
+
+              <div class="">
+                <div class="" type="button" id="" data-bs-toggle="" aria-expanded="false">
+                  <img src="images/nav/profile.png" class="rounded-circle" height="22" alt="" loading="lazy" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Right elements -->
+        </div>
+      </div>
+    </div>
+    <!-- Jumbotron -->
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark p-3 " id="headerNav" dir="rtl">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <a class="navbar-toggler-icon"><i class="fa-solid fa-bars"></i></a>
+        </button>
+
+        <div class=" collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav mx-auto ">
+            <li class="nav-item">
+              <a class="nav-link mx-2 active" aria-current="page" href="index.html">الصفحة الرئيسية</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-2" href="man-base.html">منتجاتنا</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-2" href="man.html">أحذية رجالي </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-2" href="kids.html">أحذية أطفال</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-2" href="weman.html">أحذية ستاتي</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-2" href="Us.html">من نحن</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-2" href="#">اتصل بنا</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Navbar -->
+  </header>
+  <!--Main Navigation-->
+
+
+
+
+
+  <div class="info">
+    <img src="images/plus.jpg" alt="" data-modal="#modal" class="modal__trigger">
+
+  </div>
+
+
+  <!-- Modal -->
+  <div id="modal" class="modal modal__bg" role="dialog" aria-hidden="true">
+    <div class="modal__dialog">
+      <div class="modal__content">
+
+        <div class="heroo my-5 " >
+
+          <div class="row ">
+
+            <div class=" col-lg-5 col-md-12">
+
+              <div style="margin-right: 50px;">
+                <div class="po-top">
+                  <div class="content-1  d-flex justify-content-between">
+
+                    <p class="mt-2">رقم المنتج: 15317651</p>
+                    <p class="border p-2">
+                      <span>متوفر في المخزن</span>
+                      <i class="fa fa-check " aria-hidden="true"></i>
+
+                    </p>
+                  </div>
+                </div>
+                <div class="content-1 d-flex flex-column align-items-end ">
+
+                  <p>كندرة رجالي</p>
+                  <p style="color: #D32F93;
+                                ;"> 120$</p>
+                  <p>المقاس</p>
+                </div>
+
+                <div class="smaller-box d-flex justify-content-end">
+                  <ul style="list-style: none; display: flex;">
+                    <li> <a href="">
+                        <p class="border p-2">23</p>
+                      </a></li>
+                    <li> <a href="">
+                        <p class="border p-2">23</p>
+                      </a></li>
+                    <li> <a href="">
+                        <p class="border p-2">23</p>
+                      </a></li>
+                    <li> <a href="">
+                        <p class="border p-2">23</p>
+                      </a></li>
+                    <li> <a href="">
+                        <p class="border p-2">23</p>
+                      </a></li>
+                  </ul>
+
+
+                </div>
+
+                <div class="smaller-box d-flex justify-content-end">
+                  <ul style="list-style: none; display: flex;">
+                    <li> <a href="">
+                        <p class="border p-2">23</p>
+                      </a></li>
+                    <li> <a href="">
+                        <p class="border p-2">23</p>
+                      </a></li>
+
+                  </ul>
+
+
+                </div>
+
+                <p class="d-flex justify-content-end">اللون</p>
+
+
+                <div class="d-flex justify-content-end ">
+                  <div class="color-box position-relative" style="margin:0 30px !important;">
+                    <a href="">
+                      <p class="border-red position-absolute "></p>
+                      <p class="red"></p>
+                    </a>
+
+                  </div>
+                  <div class="color-box position-relative">
+
+                    <a href="">
+                      <p class="border-red position-absolute "></p>
+                      <p class="red"></p>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="d-flex justify-content-around ml-5 d-none-res-lg">
+                  <div class="price px-4">
+                    150$
+                  </div>
+
+                  <div class="counter-product d-flex">
+                    <table>
+                      <tr>
+                        <td class="align-middle card">
+                          <div class="d-flex flex-row justify-content-center">
+                            <button class="btn btn-link "
+                              onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
+                              <i class="fas fa-minus"></i>
+                            </button>
+
+                            <input id="form1" min="0" name="quantity" value="2" type="number"
+                              class="form-control form-control-sm" style="width: 40px;" />
+
+                            <button class="btn btn-link "
+                              onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
+                              <i class="fas fa-plus"></i>
+                            </button>
+                          </div>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+
+                </div>
+
+
+                <div class="d-flex flex-column align-items-center">
+                  <p class=" d-flex justify-content-center">
+                    <a href="shopping_cart.html" type="button"
+                      class="btn btn-color text-white  py-2 btn-lg col-md-3 mb-2 px-5 w-100 " style="font-size: larger;"> اضافة الى السلة <i
+                        class="fa fa-shopping-cart" aria-hidden="true"></i>
+                    </a>
+
+
+                  </p>
+                  <p>مدة التوصيل: من 2-3 أيام
+                    <i class="fa-regular fa-calendar"></i>
+                  </p>
+                </div>
+
+              </div>
+
+            </div>
+
+
+            <div class=" col-lg-7 col-md-12">
+
+              <div class="slider ">
+
+                <div class="preview ">
+                  <img src="images/slider/item4.png" id="imagebox" alt="">
+                </div>
+                <div class="product ">
+
+                  <img src="images/slider/item3.png" alt="" onclick="clickme(this)">
+                  <img src="images/slider/item4.png" alt="" onclick="clickme(this)" class="margin-responsive">
+                  <img src="images/slider/item3.png" alt="" onclick="clickme(this)">
+                  <img src="images/slider/item4.png" alt="" onclick="clickme(this)" class="margin-responsive">
+
+                </div>
+
+
+
+              </div>
+
+
+            </div>
+
+
+          </div>
+
+
+
+
+
+
+        </div>
+
+        <!-- modal close button -->
+        <a href="" class="modal__close demo-close">
+          <svg class="" viewBox="0 0 24 24">
+            <path
+              d="M19 6.41l-1.41-1.41-5.59 5.59-5.59-5.59-1.41 1.41 5.59 5.59-5.59 5.59 1.41 1.41 5.59-5.59 5.59 5.59 1.41-1.41-5.59-5.59z" />
+            <path d="M0 0h24v24h-24z" fill="none" />
+          </svg>
+        </a>
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+  <section class="container  parent-footer parent-footer row col-md-12 col-sm-12 col-lg-7 d-block mx-auto">
+    <div class="row footer ">
+      <div class="col-md-12 col-xs-4 ">
+        <div class="text-center">
+          <img src="images/LOGO.jpg" style="width: 185px;" alt="logo">
+        </div>
+      </div>
+
+
+      <div class="col-md-12 col-sm-12 mt-2 mb-2 mobile-footer ">
+        <form class="d-flex justify-content-center  ">
+          <button type="submit" class="btn join mx-2">اشترك</button>
+          <input type="text" name="" id="" placeholder="البريد الالكتروني" class="footer-input">
+        </form>
+
+      </div>
+      <!-- Section: Social media -->
+      <section class="mb-4 text-center">
+        <!-- Facebook -->
+        <a class="btn text-white btn-floating m-1" style="background-color: #3b5998;" href="#!" role="button"><svg
+            class="svg-inline--fa fa-facebook-f" aria-hidden="true" focusable="false" data-prefix="fab"
+            data-icon="facebook-f" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" data-fa-i2svg="">
+            <path fill="currentColor"
+              d="M279.1 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.4 0 225.4 0c-73.22 0-121.1 44.38-121.1 124.7v70.62H22.89V288h81.39v224h100.2V288z">
+            </path>
+          </svg><!-- <i class="fab fa-facebook-f"></i> Font Awesome fontawesome.com --></a>
+
+        <!-- Twitter -->
+        <a class="btn text-white btn-floating m-1" style="background-color: #55acee;" href="#!" role="button"><svg
+            class="svg-inline--fa fa-twitter" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="twitter"
+            role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="">
+            <path fill="currentColor"
+              d="M459.4 151.7c.325 4.548 .325 9.097 .325 13.65 0 138.7-105.6 298.6-298.6 298.6-59.45 0-114.7-17.22-161.1-47.11 8.447 .974 16.57 1.299 25.34 1.299 49.06 0 94.21-16.57 130.3-44.83-46.13-.975-84.79-31.19-98.11-72.77 6.498 .974 12.99 1.624 19.82 1.624 9.421 0 18.84-1.3 27.61-3.573-48.08-9.747-84.14-51.98-84.14-102.1v-1.299c13.97 7.797 30.21 12.67 47.43 13.32-28.26-18.84-46.78-51.01-46.78-87.39 0-19.49 5.197-37.36 14.29-52.95 51.65 63.67 129.3 105.3 216.4 109.8-1.624-7.797-2.599-15.92-2.599-24.04 0-57.83 46.78-104.9 104.9-104.9 30.21 0 57.5 12.67 76.67 33.14 23.72-4.548 46.46-13.32 66.6-25.34-7.798 24.37-24.37 44.83-46.13 57.83 21.12-2.273 41.58-8.122 60.43-16.24-14.29 20.79-32.16 39.31-52.63 54.25z">
+            </path>
+          </svg><!-- <i class="fab fa-twitter"></i> Font Awesome fontawesome.com --></a>
+
+
+        <!-- Instagram -->
+        <a class="btn text-white btn-floating m-1" style="background-color: #ac2bac;" href="#!" role="button"><svg
+            class="svg-inline--fa fa-instagram" aria-hidden="true" focusable="false" data-prefix="fab"
+            data-icon="instagram" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg="">
+            <path fill="currentColor"
+              d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z">
+            </path>
+          </svg><!-- <i class="fab fa-instagram"></i> Font Awesome fontawesome.com --></a>
+
+
+
+        <!-- tiktok -->
+        <a class="btn text-white btn-floating m-1" style="background-color: #000;" href="#!" role="button"><svg
+            class="svg-inline--fa fa-tiktok" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="tiktok"
+            role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg="">
+            <path fill="currentColor"
+              d="M448 209.9a210.1 210.1 0 0 1 -122.8-39.25V349.4A162.6 162.6 0 1 1 185 188.3V278.2a74.62 74.62 0 1 0 52.23 71.18V0l88 0a121.2 121.2 0 0 0 1.86 22.17h0A122.2 122.2 0 0 0 381 102.4a121.4 121.4 0 0 0 67 20.14z">
+            </path>
+          </svg><!-- <i class="fa-brands fa-tiktok"></i> Font Awesome fontawesome.com --></a>
+
+
+
+        <!-- whatsapp -->
+        <a class="btn text-white btn-floating m-1" style="background-color: #00A884;" href="#!" role="button"> <svg
+            class="svg-inline--fa fa-whatsapp" aria-hidden="true" focusable="false" data-prefix="fab"
+            data-icon="whatsapp" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg="">
+            <path fill="currentColor"
+              d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7 .9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z">
+            </path>
+          </svg><!-- <i class="fab fa-whatsapp"></i> Font Awesome fontawesome.com -->
+        </a>
+
+
+
+      </section>
+      <!-- Section: Social media -->
+
+      <div class="col-md-12 col-sm-12 mb-3">
+        <div class="d-flex justify-content-center mt-3">
+          <p class="mx-2"><a href="my orders.html">طلباتي </a></p>
+          <p class="mx-2"><a href="personal_info.html">حسابي </a></p>
+          <p class="mx-2"><a href="terms _of_ service.html">الاحكام والشروط </a></p>
+          <p class="mx-2"><a href="privacy_policy.html">الخصوصية </a></p>
+          <p class="mx-2"><a href="shipping_address.html">الشحن والتوصيل </a></p>
+          <p class="mx-2"><a href="Us.html">من نحن</a></p>
+
+        </div>
+      </div>
+      <!-- Grid container -->
+      <div class="container p-2  text-center">
+
+        <!-- Grid container -->
+
+
+
+
+        <div class="container  ">
+          <div class="row">
+
+            <div class="col-md-12 ">
+              <p class="text-center mobile-footer ">© جميع الحقوق محفوظة 2022</p>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+    </div>
+  </section>
+
+
+
+  <!-- Swiper JS -->
+  <script src="js/bootstrap.min.js"></script>
+  <script src="jquery/jquery.js"></script>
+
+
+  <!-- JavaScript -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js"
+    integrity="sha512-6PM0qYu5KExuNcKt5bURAoT6KCThUmHRewN3zUFNaoI6Di7XJPTMoT6K0nsagZKk2OB4L7E3q1uQKHNHd4stIQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script>
+    var Modal = (function () {
+
+      var trigger = $qsa('.modal__trigger'); // what you click to activate the modal
+      var modals = $qsa('.modal'); // the entire modal (takes up entire window)
+      var modalsbg = $qsa('.modal__bg'); // the entire modal (takes up entire window)
+      var content = $qsa('.modal__content'); // the inner content of the modal
+      var closers = $qsa('.modal__close'); // an element used to close the modal
+      var w = window;
+      var isOpen = false;
+      var contentDelay = 400; // duration after you click the button and wait for the content to show
+      var len = trigger.length;
+
+      // make it easier for yourself by not having to type as much to select an element
+      function $qsa(el) {
+        return document.querySelectorAll(el);
+      }
+
+      var getId = function (event) {
+
+        event.preventDefault();
+        var self = this;
+        // get the value of the data-modal attribute from the button
+        var modalId = self.dataset.modal;
+        var len = modalId.length;
+        // remove the '#' from the string
+        var modalIdTrimmed = modalId.substring(1, len);
+        // select the modal we want to activate
+        var modal = document.getElementById(modalIdTrimmed);
+        // execute function that creates the temporary expanding div
+        makeDiv(self, modal);
+      };
+
+      var makeDiv = function (self, modal) {
+
+        var fakediv = document.getElementById('modal__temp');
+
+        /**
+         * if there isn't a 'fakediv', create one and append it to the button that was
+         * clicked. after that execute the function 'moveTrig' which handles the animations.
+         */
+
+        if (fakediv === null) {
+          var div = document.createElement('div');
+          div.id = 'modal__temp';
+          self.appendChild(div);
+          moveTrig(self, modal, div);
+        }
+      };
+
+      var moveTrig = function (trig, modal, div) {
+        var trigProps = trig.getBoundingClientRect();
+        var m = modal;
+        var mProps = m.querySelector('.modal__content').getBoundingClientRect();
+        var transX, transY, scaleX, scaleY;
+        var xc = w.innerWidth / 2;
+        var yc = w.innerHeight / 2;
+
+        // this class increases z-index value so the button goes overtop the other buttons
+        trig.classList.add('modal__trigger--active');
+
+        // these values are used for scale the temporary div to the same size as the modal
+        scaleX = mProps.width / trigProps.width;
+        scaleY = mProps.height / trigProps.height;
+
+        scaleX = scaleX.toFixed(3); // round to 3 decimal places
+        scaleY = scaleY.toFixed(3);
+
+
+        // these values are used to move the button to the center of the window
+        transX = Math.round(xc - trigProps.left - trigProps.width / 2);
+        transY = Math.round(yc - trigProps.top - trigProps.height / 2);
+
+        // if the modal is aligned to the top then move the button to the center-y of the modal instead of the window
+        if (m.classList.contains('modal--align-top')) {
+          transY = Math.round(mProps.height / 2 + mProps.top - trigProps.top - trigProps.height / 2);
+        }
+
+
+        // translate button to center of screen
+        trig.style.transform = 'translate(' + transX + 'px, ' + transY + 'px)';
+        trig.style.webkitTransform = 'translate(' + transX + 'px, ' + transY + 'px)';
+        // expand temporary div to the same size as the modal
+        div.style.transform = 'scale(' + scaleX + ',' + scaleY + ')';
+        div.style.webkitTransform = 'scale(' + scaleX + ',' + scaleY + ')';
+
+
+        window.setTimeout(function () {
+          window.requestAnimationFrame(function () {
+            open(m, div);
+          });
+        }, contentDelay);
+
+      };
+
+      var open = function (m, div) {
+
+        if (!isOpen) {
+          // select the content inside the modal
+          var content = m.querySelector('.modal__content');
+          // reveal the modal
+          m.classList.add('modal--active');
+          // reveal the modal content
+          content.classList.add('modal__content--active');
+
+          /**
+           * when the modal content is finished transitioning, fadeout the temporary
+           * expanding div so when the window resizes it isn't visible ( it doesn't
+           * move with the window).
+           */
+
+          content.addEventListener('transitionend', hideDiv, false);
+
+          isOpen = true;
+        }
+
+        function hideDiv() {
+          // fadeout div so that it can't be seen when the window is resized
+          div.style.opacity = '0';
+          content.removeEventListener('transitionend', hideDiv, false);
+        }
+      };
+
+      var close = function (event) {
+
+        event.preventDefault();
+        event.stopImmediatePropagation();
+
+        var target = event.target;
+        var div = document.getElementById('modal__temp');
+
+        /**
+         * make sure the modal__bg or modal__close was clicked, we don't want to be able to click
+         * inside the modal and have it close.
+         */
+
+        if (isOpen && target.classList.contains('modal__bg') || target.classList.contains('modal__close')) {
+
+          // make the hidden div visible again and remove the transforms so it scales back to its original size
+          div.style.opacity = '1';
+          div.removeAttribute('style');
+
+          /**
+          * iterate through the modals and modal contents and triggers to remove their active classes.
+    * remove the inline css from the trigger to move it back into its original position.
+          */
+
+          for (var i = 0; i < len; i++) {
+            modals[i].classList.remove('modal--active');
+            content[i].classList.remove('modal__content--active');
+            trigger[i].style.transform = 'none';
+            trigger[i].style.webkitTransform = 'none';
+            trigger[i].classList.remove('modal__trigger--active');
+          }
+
+          // when the temporary div is opacity:1 again, we want to remove it from the dom
+          div.addEventListener('transitionend', removeDiv, false);
+
+          isOpen = false;
+
+        }
+
+        function removeDiv() {
+          setTimeout(function () {
+            window.requestAnimationFrame(function () {
+              // remove the temp div from the dom with a slight delay so the animation looks good
+              div.remove();
+            });
+          }, contentDelay - 50);
+        }
+
+      };
+
+      var bindActions = function () {
+        for (var i = 0; i < len; i++) {
+          trigger[i].addEventListener('click', getId, false);
+          closers[i].addEventListener('click', close, false);
+          modalsbg[i].addEventListener('click', close, false);
+        }
+      };
+
+      var init = function () {
+        bindActions();
+      };
+
+      return {
+        init: init
+      };
+
+    }());
+
+    Modal.init();
+  </script>
+  <script>
+    function clickme(smallImg) {
+
+      var fullImg = document.getElementById("imagebox");
+      fullImg.src = smallImg.src;
+
+    }
+
+  </script>
+</body>
+
+</html>

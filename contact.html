@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="css/swiper-bundle.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <!-- Custom styles for this template -->
+  <link href="https://fonts.googleapis.com/css?family=Amiri:wght@400;700&amp;display=swap" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <!-- <link href="../blog/blog.rtl.css" rel="stylesheet"> -->
+  <style>
+    .choose {
+      position: relative;
+    }
+
+    .line-spacer {
+      width: 120px;
+      height: 2px;
+      background-color: #EAEAEA;
+      display: block !important;
+      position: absolute;
+      top: 12px;
+    }
+
+    .line-spacer-2 {
+      width: 120px;
+      height: 2px;
+      background-color: #EAEAEA;
+      display: block !important;
+      position: absolute;
+      top: 12px;
+      right: 0;
+    }
+
+    .floating-chat.enter {
+      transform: translateY(80px);
+      opacity: 0.6;
+      box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 2px rgba(0, 0, 0, 0.14);
+    }
+
+    /* --- */
+
+
+
+  p{
+    color: #fff;
+  }
+    .contact2 .font-weight-medium {
+      font-weight: 500;
+    }
+
+    .contact2 .subtitle {
+      color: #8d97ad;
+      line-height: 24px;
+    }
+
+    .contact2 .bg-image {
+      background-size: cover;
+      position: relative;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+    }
+
+    .contact2 .card.card-shadow {
+      -webkit-box-shadow: 0px 0px 30px rgba(115, 128, 157, 0.1);
+      box-shadow: 0px 0px 30px rgba(115, 128, 157, 0.1);
+    }
+
+    .contact2 .detail-box .round-social {
+      margin-top: 100px;
+    }
+
+    .contact2 .round-social a {
+      background: transparent;
+      margin: 0 7px;
+      padding: 11px 12px;
+    }
+
+    .contact2 .contact-container .links a {
+      color: #8d97ad;
+    }
+
+    .contact2 .contact-container {
+      position: relative;
+      top: 200px;
+    }
+  </style>
+</head>
+
+<body class="row col-md-12 col-sm-12 col-lg-10 d-block mx-auto">
+  <!--Main Navigation-->
+  <header>
+    <!-- Jumbotron -->
+    <div class="p-3 text-center border-bottom">
+      <div class="container">
+        <div class="row">
+          <!-- Left elements -->
+          <div class="col-md-2 col-sm-2 d-flex justify-content-center justify-content-md-start mb-3 mb-md-0">
+            <a href="#!" class="ms-md-2">
+              <img src="images/LOGO.jpg" height="35" />
+            </a>
+          </div>
+          <!-- Left elements -->
+          <!-- Center elements -->
+          <div class="col-md-8 col-sm-8">
+            <form class="d-flex input-group w-auto my-auto mb-3 mb-md-0">
+              <input autocomplete="off" type="search" class="form-control rounded" placeholder="Search" />
+              <span class="input-group-text border-0 d-none d-lg-flex"><i class="fas fa-search"></i></span>
+            </form>
+          </div>
+          <!-- Center elements -->
+
+          <!-- Right elements -->
+          <div class="col-md-2 col-sm-2 d-flex justify-content-center justify-content-md-end align-items-center">
+            <div class="d-flex">
+              <!-- Cart -->
+              <a class="text-reset me-3" href="#">
+                <span><i class="fas fa-shopping-cart"></i></span>
+                <span class="badge rounded-pill badge-notification bg-danger">1</span>
+              </a>
+
+              <!-- User -->
+
+              <div class="">
+                <div class="" type="button" id="" data-bs-toggle="" aria-expanded="false">
+                  <img src="images/nav/profile.png" class="rounded-circle" height="22" alt="" loading="lazy" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Right elements -->
+        </div>
+      </div>
+    </div>
+    <!-- Jumbotron -->
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark p-3 " id="headerNav" dir="rtl">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <a class="navbar-toggler-icon"><i class="fa-solid fa-bars"></i></a>
+        </button>
+
+        <div class=" collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav mx-auto ">
+            <li class="nav-item">
+              <a class="nav-link mx-2 active" aria-current="page" href="index.html">الصفحة الرئيسية</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-2" href="man-base.html">منتجاتنا</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-2" href="man.html">أحذية رجالي </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-2" href="kids.html">أحذية أطفال</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-2" href="weman.html">أحذية ستاتي</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-2" href="Us.html">من نحن</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-2" href="contact.html">اتصل بنا</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Navbar -->
+  </header>
+  <!--Main Navigation-->
+
+
+
+
+  <section class="text-center ">
+
+
+    
+    <div class="mt-4" >
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12094.57348593182!2d-74.00599512526003!3d40.72586666928451!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2598f988156a9%3A0xd54629bdf9d61d68!2sBroadway-Lafayette%20St!5e0!3m2!1spl!2spl!4v1624523797308!5m2!1spl!2spl"
+        class=" w-100" style="border:0;height: 400px;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+
+
+    <div class="container " style="box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;">
+      <div class="row contact-container">
+        <div class="col-lg-12">
+          <div class="card card-shadow border-0 px-2" style="    margin: -10% auto 0;">
+            <div class="row" >
+              <div class="col-lg-8">
+                <div class="contact-box p-4">
+                  <h4 class="title"> نتوق إلى السماع منك</h4>
+                  <form>
+                    <div class="row">
+                      <div class="col-lg-10">
+                        <div class="form-group mt-3">
+                          <input class="form-control" type="text" placeholder="اسمك">
+                        </div>
+                      </div>
+                      <div class="col-lg-2">
+                        <div class="form-group mt-3">
+
+                          <label for="form-label" class="d-flex justify-content-end">اسمك</label>
+                        </div>
+                      </div>
+                      <div class="col-lg-10">
+                        <div class="form-group mt-3">
+                          <input class="form-control" type="email" placeholder="بريدك الالكتروني">
+                        </div>
+                      </div>
+                      <div class="col-lg-2">
+                        <div class="form-group mt-3">
+
+                          <label for="form-label" class="d-flex justify-content-end"> الموضوع</label>
+                        </div>
+                      </div>
+                      <div class="col-lg-10">
+                        <div class="form-group mt-3">
+                          <select class="form-select" aria-label="Default select example" style="text-align: right;">
+                            <option selected > -- الرجاء الاختيار</option>
+                            <option value="استفسار عن منتج غير متوفر">استفسار عن منتج غير متوفر</option>
+                            <option value="استفسار عن استبدال منتج">استفسار عن استبدال منتج</option>
+                            <option value="استفسار عن موعد وصول طلبي">استفسار عن موعد وصول طلبي</option>                          </select>
+                        </div>
+                      </div>
+                      <div class="col-lg-2">
+                        <div class="form-group mt-3">
+
+                          <label for="form-label" class="d-flex justify-content-end">اسمك</label>
+                        </div>
+                      </div>
+
+                      <div class="col-lg-10">
+                        <div class="form-group mt-3">
+                          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+
+                        </div>
+                      </div>
+                      <div class="col-lg-2">
+                        <div class="form-group mt-3">
+
+                          <label for="form-label" class="d-flex justify-content-end">الرسالة</label>
+                        </div>
+                      </div>
+
+                      <div class="col-lg-12">
+                        <button type="submit" class="btn  mt-3 mb-3 text-white border-0 py-2 px-5" style="background-color: #D82090;"><span>ارسل
+                            <i class="ti-arrow-right"></i></span></button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+
+
+
+              <div class="col-lg-4 bg-image" style="background-color: #570a3c;">
+                <div class="detail-box p-4" >
+
+                  <div class="d-flex justify-content-end mb-4">
+                    <div style="display: flex;flex-direction: column;align-items: flex-end;justify-content: end;margin-right: 50px;">
+                      <p>الطيرة,رام الله
+                      </p>
+                    </div>
+                    <i class="fa-solid fa-location-dot" style="color:#D82090;font-size: 25px"></i> 
+                  </div>
+
+                
+                 <div class="d-flex justify-content-end mb-4">
+                   <div style="display: flex;flex-direction: column;align-items: flex-end;justify-content: end;margin-right: 50px;">
+                     <p> 022929150
+                     </p>
+                   </div>
+                   <i class="fa-solid fa-phone" style="color:#D82090;font-size: 25px"></i>                  </div>
+
+
+                 <div class="d-flex justify-content-end mb-4">
+                   <div style="display: flex;flex-direction: column;align-items: flex-end;justify-content: end;margin-right: 50px;">
+                     <p>
+                      السبت-الجمعة:24 ساعة
+                       
+                      
+                     </p>
+                   </div>
+                   <i class="fa-regular fa-clock" style="color:#D82090;font-size: 25px"></i>   
+                                </div>
+
+
+                 <div class="d-flex justify-content-end">
+                   <div style="display: flex;flex-direction: column;align-items: flex-end;justify-content: end;margin-right: 50px;">
+                     <p style="text-align: justify;">
+                      نسعد بمساعدتكم، تواصل معنا عبر الرقم الموضح اعلاه او من خلال الدردشة مع الدعم الفني بالضغط على زر الدردشة على طرف الشاشة في الاسفل.
+
+                     </p>
+                   </div>
+                   <i class="fa-solid fa-headset" style="color:#D82090;font-size: 25px"></i>                 </div>
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="container  parent-footer parent-footer row col-md-12 col-sm-12 col-lg-10 d-block mx- mt-4">
+    <div class="row footer ">
+      <div class="col-md-12 col-xs-4 ">
+        <div class="text-center">
+          <img src="images/LOGO.jpg" style="width: 185px;" alt="logo">
+        </div>
+      </div>
+
+
+      <div class="col-md-12 col-sm-12 mt-2 mb-2 mobile-footer ">
+        <form class="d-flex justify-content-center  ">
+          <button type="submit" class="btn join mx-2">اشترك</button>
+          <input type="text" name="" id="" placeholder="البريد الالكتروني" class="footer-input">
+        </form>
+
+      </div>
+      <!-- Section: Social media -->
+      <section class="mb-4 text-center">
+        <!-- Facebook -->
+        <a class="btn text-white btn-floating m-1" style="background-color: #3b5998;" href="#!" role="button"><svg
+            class="svg-inline--fa fa-facebook-f" aria-hidden="true" focusable="false" data-prefix="fab"
+            data-icon="facebook-f" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" data-fa-i2svg="">
+            <path fill="currentColor"
+              d="M279.1 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.4 0 225.4 0c-73.22 0-121.1 44.38-121.1 124.7v70.62H22.89V288h81.39v224h100.2V288z">
+            </path>
+          </svg><!-- <i class="fab fa-facebook-f"></i> Font Awesome fontawesome.com --></a>
+
+        <!-- Twitter -->
+        <a class="btn text-white btn-floating m-1" style="background-color: #55acee;" href="#!" role="button"><svg
+            class="svg-inline--fa fa-twitter" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="twitter"
+            role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="">
+            <path fill="currentColor"
+              d="M459.4 151.7c.325 4.548 .325 9.097 .325 13.65 0 138.7-105.6 298.6-298.6 298.6-59.45 0-114.7-17.22-161.1-47.11 8.447 .974 16.57 1.299 25.34 1.299 49.06 0 94.21-16.57 130.3-44.83-46.13-.975-84.79-31.19-98.11-72.77 6.498 .974 12.99 1.624 19.82 1.624 9.421 0 18.84-1.3 27.61-3.573-48.08-9.747-84.14-51.98-84.14-102.1v-1.299c13.97 7.797 30.21 12.67 47.43 13.32-28.26-18.84-46.78-51.01-46.78-87.39 0-19.49 5.197-37.36 14.29-52.95 51.65 63.67 129.3 105.3 216.4 109.8-1.624-7.797-2.599-15.92-2.599-24.04 0-57.83 46.78-104.9 104.9-104.9 30.21 0 57.5 12.67 76.67 33.14 23.72-4.548 46.46-13.32 66.6-25.34-7.798 24.37-24.37 44.83-46.13 57.83 21.12-2.273 41.58-8.122 60.43-16.24-14.29 20.79-32.16 39.31-52.63 54.25z">
+            </path>
+          </svg><!-- <i class="fab fa-twitter"></i> Font Awesome fontawesome.com --></a>
+
+
+        <!-- Instagram -->
+        <a class="btn text-white btn-floating m-1" style="background-color: #ac2bac;" href="#!" role="button"><svg
+            class="svg-inline--fa fa-instagram" aria-hidden="true" focusable="false" data-prefix="fab"
+            data-icon="instagram" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg="">
+            <path fill="currentColor"
+              d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z">
+            </path>
+          </svg><!-- <i class="fab fa-instagram"></i> Font Awesome fontawesome.com --></a>
+
+
+
+        <!-- tiktok -->
+        <a class="btn text-white btn-floating m-1" style="background-color: #000;" href="#!" role="button"><svg
+            class="svg-inline--fa fa-tiktok" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="tiktok"
+            role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg="">
+            <path fill="currentColor"
+              d="M448 209.9a210.1 210.1 0 0 1 -122.8-39.25V349.4A162.6 162.6 0 1 1 185 188.3V278.2a74.62 74.62 0 1 0 52.23 71.18V0l88 0a121.2 121.2 0 0 0 1.86 22.17h0A122.2 122.2 0 0 0 381 102.4a121.4 121.4 0 0 0 67 20.14z">
+            </path>
+          </svg><!-- <i class="fa-brands fa-tiktok"></i> Font Awesome fontawesome.com --></a>
+
+
+
+        <!-- whatsapp -->
+        <a class="btn text-white btn-floating m-1" style="background-color: #00A884;" href="#!" role="button"> <svg
+            class="svg-inline--fa fa-whatsapp" aria-hidden="true" focusable="false" data-prefix="fab"
+            data-icon="whatsapp" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg="">
+            <path fill="currentColor"
+              d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7 .9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z">
+            </path>
+          </svg><!-- <i class="fab fa-whatsapp"></i> Font Awesome fontawesome.com -->
+        </a>
+
+
+
+      </section>
+      <!-- Section: Social media -->
+
+      <div class="col-md-12 col-sm-12 mb-3">
+        <div class="d-flex justify-content-center mt-3">
+          <p class="mx-2"><a href="my orders.html">طلباتي </a></p>
+          <p class="mx-2"><a href="personal_info.html">حسابي </a></p>
+          <p class="mx-2"><a href="terms _of_ service.html">الاحكام والشروط </a></p>
+          <p class="mx-2"><a href="privacy_policy.html">الخصوصية </a></p>
+          <p class="mx-2"><a href="shipping_address.html">الشحن والتوصيل </a></p>
+          <p class="mx-2"><a href="Us.html">من نحن</a></p>
+
+        </div>
+      </div>
+      <!-- Grid container -->
+      <div class="container p-2  text-center">
+
+        <!-- Grid container -->
+
+
+
+
+        <div class="container  ">
+          <div class="row">
+
+            <div class="col-md-12 ">
+              <p class="text-center mobile-footer" style="color: #000;" >© جميع الحقوق محفوظة 2022</p>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+    </div>
+  </section>
+
+
+
+
+
+
+  <!-- Swiper JS -->
+  <script src="js/bootstrap.min.js"></script>
+  <script src="jquery/jquery.js"></script>
+
+
+  <!-- JavaScript -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js"
+    integrity="sha512-6PM0qYu5KExuNcKt5bURAoT6KCThUmHRewN3zUFNaoI6Di7XJPTMoT6K0nsagZKk2OB4L7E3q1uQKHNHd4stIQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+
+    var element = $('.floating-chat');
+    var myStorage = localStorage;
+
+    if (!myStorage.getItem('chatID')) {
+      myStorage.setItem('chatID', createUUID());
+    }
+
+    setTimeout(function () {
+      element.addClass('enter');
+    }, 1000);
+
+    element.click(openElement);
+
+    function openElement() {
+      var messages = element.find('.messages');
+      var textInput = element.find('.text-box');
+      element.find('>i').hide();
+      element.addClass('expand');
+      element.find('.chat').addClass('enter');
+      var strLength = textInput.val().length * 2;
+      textInput.keydown(onMetaAndEnter).prop("disabled", false).focus();
+      element.off('click', openElement);
+      element.find('.header button').click(closeElement);
+      element.find('#sendMessage').click(sendNewMessage);
+      messages.scrollTop(messages.prop("scrollHeight"));
+    }
+
+    function closeElement() {
+      element.find('.chat').removeClass('enter').hide();
+      element.find('>i').show();
+      element.removeClass('expand');
+      element.find('.header button').off('click', closeElement);
+      element.find('#sendMessage').off('click', sendNewMessage);
+      element.find('.text-box').off('keydown', onMetaAndEnter).prop("disabled", true).blur();
+      setTimeout(function () {
+        element.find('.chat').removeClass('enter').show()
+        element.click(openElement);
+      }, 500);
+    }
+
+    function createUUID() {
+      // http://www.ietf.org/rfc/rfc4122.txt
+      var s = [];
+      var hexDigits = "0123456789abcdef";
+      for (var i = 0; i < 36; i++) {
+        s[i] = hexDigits.substr(Math.floor(Math.random() * 0x10), 1);
+      }
+      s[14] = "4"; // bits 12-15 of the time_hi_and_version field to 0010
+      s[19] = hexDigits.substr((s[19] & 0x3) | 0x8, 1); // bits 6-7 of the clock_seq_hi_and_reserved to 01
+      s[8] = s[13] = s[18] = s[23] = "-";
+
+      var uuid = s.join("");
+      return uuid;
+    }
+
+    function sendNewMessage() {
+      var userInput = $('.text-box');
+      var newMessage = userInput.html().replace(/\<div\>|\<br.*?\>/ig, '\n').replace(/\<\/div\>/g, '').trim().replace(/\n/g, '<br>');
+
+      if (!newMessage) return;
+
+      var messagesContainer = $('.messages');
+
+      messagesContainer.append([
+        '<li class="self">',
+        newMessage,
+        '</li>'
+      ].join(''));
+
+      // clean out old message
+      userInput.html('');
+      // focus on input
+      userInput.focus();
+
+      messagesContainer.finish().animate({
+        scrollTop: messagesContainer.prop("scrollHeight")
+      }, 250);
+    }
+
+    function onMetaAndEnter(event) {
+      if ((event.metaKey || event.ctrlKey) && event.keyCode == 13) {
+        sendNewMessage();
+      }
+    }
+  </script>
+</body>
+
+</html>
